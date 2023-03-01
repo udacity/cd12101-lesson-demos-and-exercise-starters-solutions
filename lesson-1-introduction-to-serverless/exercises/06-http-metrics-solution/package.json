@@ -1,0 +1,12 @@
+{
+    "name": "hello-lambda",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "main": "lambda.js",
+    "author": "",
+    "dependencies": {
+        "@aws-sdk/client-cloudwatch": "^3.223.0",
+        "axios": "^1.2.0"
+    }
+}

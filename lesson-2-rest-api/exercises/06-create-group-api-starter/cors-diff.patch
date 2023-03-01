@@ -1,0 +1,23 @@
+diff --git b/backend/serverless.yml a/backend/serverless.yml
+index 5a0e729..9772af2 100644
+--- b/backend/serverless.yml
++++ a/backend/serverless.yml
+@@ -13,3 +13,4 @@ functions:
+       - http:
+           method: get
+           path: groups
++          cors: true
+diff --git b/backend/src/lambda/http/getGroups.js a/backend/src/lambda/http/getGroups.js
+index fa86cd0..f709d9a 100644
+--- b/backend/src/lambda/http/getGroups.js
++++ a/backend/src/lambda/http/getGroups.js
+@@ -21,6 +21,9 @@ export async function handler(event) {
+ 
+   return {
+     statusCode: 200,
++    headers: {
++      'Access-Control-Allow-Origin': '*'
++    },
+     body: JSON.stringify({
+       items: data
+     })

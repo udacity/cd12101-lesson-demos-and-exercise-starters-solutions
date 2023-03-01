@@ -1,0 +1,25 @@
+service: http-metrics
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action: 'cloudwatch:PutMetricData'
+          Resource: '*'
+
+  environment:
+    SERVICE_NAME: example
+    URL: https://example.com
+
+functions:
+  http-monitor:
+    handler: lambda.handler
+    events:
+      - schedule:
+          rate: rate(1 minute)
+          enabled: true

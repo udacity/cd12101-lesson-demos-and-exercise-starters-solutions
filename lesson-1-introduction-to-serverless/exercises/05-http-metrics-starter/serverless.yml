@@ -1,0 +1,18 @@
+service: http-metrics
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+  iam:
+    role:
+      statements:
+        # TODO: Add IAM statements here
+
+  environment:
+    SERVICE_NAME: # TODO: Provide service name
+    URL: # TODO: Provide HTTP URL
+
+functions:
+  # TODO: Add your function here

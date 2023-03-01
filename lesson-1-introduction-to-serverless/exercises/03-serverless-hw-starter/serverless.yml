@@ -1,0 +1,8 @@
+service: hello-world-lambda
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+# TODO: Add your function definition here

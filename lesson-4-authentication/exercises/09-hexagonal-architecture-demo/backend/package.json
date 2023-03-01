@@ -1,0 +1,27 @@
+{
+    "name": "serverless-udagram-app",
+    "version": "1.0.0",
+    "description": "Serverless images sharing application",
+    "type": "module",
+    "main": "",
+    "author": "Ivan Mushketyk",
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.214.0",
+        "@aws-sdk/client-s3": "^3.214.0",
+        "@aws-sdk/credential-provider-node": "^3.238.0",
+        "@aws-sdk/lib-dynamodb": "^3.214.0",
+        "@aws-sdk/s3-request-presigner": "^3.214.0",
+        "@middy/core": "^4.0.9",
+        "@middy/http-cors": "^4.0.9",
+        "@middy/http-error-handler": "^4.0.9",
+        "@opensearch-project/opensearch": "^2.1.0",
+        "aws-opensearch-connector": "^1.1.0",
+        "aws-xray-sdk-core": "^3.4.0",
+        "aws4": "^1.11.0",
+        "http-errors": "^2.0.0",
+        "jsonwebtoken": "^9.0.0",
+        "serverless-iam-roles-per-function": "^3.2.0",
+        "sharp": "^0.31.3",
+        "uuid": "^9.0.0"
+    }
+}

@@ -1,0 +1,10 @@
+service: serverless-udagram-app
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  # TODO: Add a function definition

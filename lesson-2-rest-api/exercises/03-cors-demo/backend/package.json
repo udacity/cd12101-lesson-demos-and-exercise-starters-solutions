@@ -1,0 +1,8 @@
+{
+    "name": "serverless-udagram-app",
+    "version": "1.0.0",
+    "description": "Serverless images sharing application",
+    "type": "module",
+    "main": "",
+    "author": "Ivan Mushketyk"
+}

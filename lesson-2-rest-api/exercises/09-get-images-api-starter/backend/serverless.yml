@@ -1,0 +1,69 @@
+service: serverless-udagram-app
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+
+  environment:
+    GROUPS_TABLE: Groups-${self:provider.stage}
+    # TODO: Add a new table name
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Scan
+            - dynamodb:PutItem
+          Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.GROUPS_TABLE}
+        # TODO: Add new permissions for Query and PutItem actions
+
+functions:
+  GetGroups:
+    handler: src/lambda/http/getGroups.handler
+    events:
+      - http:
+          method: get
+          path: groups
+          cors: true
+  CreateGroup:
+    handler: src/lambda/http/createGroup.handler
+    events:
+      - http:
+          method: post
+          path: groups
+          cors: true
+          request:
+            schemas:
+              application/json: ${file(models/create-group-request.json)}
+  CreateImage:
+    handler: src/lambda/http/createImage.handler
+    events:
+      - http:
+          method: post
+          path: groups/{groupId}/images
+          cors: true
+          request:
+            schemas:
+              application/json: ${file(models/create-image-request.json)}
+  # TODO: Add new function definition
+
+resources:
+  Resources:
+    GroupsDynamoDBTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:provider.environment.GROUPS_TABLE}
+    # TODO: Add new table definition

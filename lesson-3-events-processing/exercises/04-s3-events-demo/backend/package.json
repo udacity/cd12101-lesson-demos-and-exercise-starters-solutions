@@ -1,0 +1,16 @@
+{
+    "name": "serverless-udagram-app",
+    "version": "1.0.0",
+    "description": "Serverless images sharing application",
+    "type": "module",
+    "main": "",
+    "author": "Ivan Mushketyk",
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.214.0",
+        "@aws-sdk/client-s3": "^3.214.0",
+        "@aws-sdk/lib-dynamodb": "^3.214.0",
+        "@aws-sdk/s3-request-presigner": "^3.214.0",
+        "sharp": "^0.31.3",
+        "uuid": "^9.0.0"
+    }
+}

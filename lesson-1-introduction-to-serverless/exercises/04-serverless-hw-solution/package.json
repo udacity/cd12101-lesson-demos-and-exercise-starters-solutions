@@ -1,0 +1,8 @@
+{
+    "name": "hello-lambda",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "",
+    "main": "lambda.js",
+    "author": ""
+}
