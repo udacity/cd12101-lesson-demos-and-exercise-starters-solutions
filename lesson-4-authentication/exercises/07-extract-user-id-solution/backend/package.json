@@ -6,8 +6,8 @@
     "main": "",
     "author": "Ivan Mushketyk",
     "dependencies": {
-        "@aws-sdk/client-dynamodb": "^3.214.0",
-        "@aws-sdk/client-s3": "^3.214.0",
+        "@aws-sdk/client-dynamodb": "^3.351.0",
+        "@aws-sdk/client-s3": "^3.350.0",
         "@aws-sdk/credential-provider-node": "^3.238.0",
         "@aws-sdk/lib-dynamodb": "^3.214.0",
         "@aws-sdk/s3-request-presigner": "^3.214.0",
