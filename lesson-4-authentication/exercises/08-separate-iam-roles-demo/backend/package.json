@@ -16,7 +16,7 @@
         "@middy/http-error-handler": "^4.0.9",
         "@opensearch-project/opensearch": "^2.1.0",
         "aws-opensearch-connector": "^1.1.0",
-        "aws-xray-sdk-core": "^3.4.0",
+        "aws-xray-sdk-core": "^3.5.0",
         "aws4": "^1.11.0",
         "http-errors": "^2.0.0",
         "jsonwebtoken": "^9.0.0",
