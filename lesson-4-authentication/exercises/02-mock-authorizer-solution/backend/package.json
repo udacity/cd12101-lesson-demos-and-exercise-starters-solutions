@@ -13,7 +13,7 @@
         "@aws-sdk/s3-request-presigner": "^3.214.0",
         "@opensearch-project/opensearch": "^2.1.0",
         "aws-opensearch-connector": "^1.1.0",
-        "aws-xray-sdk-core": "^3.4.0",
+        "aws-xray-sdk-core": "^3.5.0",
         "aws4": "^1.11.0",
         "sharp": "^0.31.3",
         "uuid": "^9.0.0"
