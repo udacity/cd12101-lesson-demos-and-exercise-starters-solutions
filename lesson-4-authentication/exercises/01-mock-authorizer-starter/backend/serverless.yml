@@ -14,7 +14,7 @@ provider:
 
   environment:
     GROUPS_TABLE: Groups-${self:provider.stage}
-    IMAGES_TABLE: Images-${self:provider.stage} 
+    IMAGES_TABLE: Images-${self:provider.stage}
     IMAGE_ID_INDEX: ImageIdIndex
     IMAGES_S3_BUCKET: udagram-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
@@ -120,7 +120,7 @@ resources:
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
         TableName: ${self:provider.environment.GROUPS_TABLE}
-  
+
     ImagesDynamoDBTable:
       Type: "AWS::DynamoDB::Table"
       Properties:
@@ -147,11 +147,14 @@ resources:
               KeyType: HASH
             Projection:
               ProjectionType: ALL
-    
+
     AttachmentsBucket:
       Type: AWS::S3::Bucket
       Properties:
         BucketName: ${self:provider.environment.IMAGES_S3_BUCKET}
+        PublicAccessBlockConfiguration:
+          BlockPublicPolicy: false
+          RestrictPublicBuckets: false
         CorsConfiguration:
           CorsRules:
             -
