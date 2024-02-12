@@ -13,7 +13,7 @@ export function GroupsList() {
     async function getAllGroups() {
       try {
         const accessToken = await getAccessTokenSilently({
-          audience: `https://test-endpoint.auth0.com/api/v2/`,
+          audience: `${process.env.REACT_APP_API_ENDPOINT}/api/v2/`,
           scope: 'read:groups'
         })
         console.log('Access token: ' + accessToken)
